@@ -19,6 +19,7 @@ void SpineSkin::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_attachments"), &SpineSkin::get_attachments);
 	ClassDB::bind_method(D_METHOD("get_all_bone_data"), &SpineSkin::get_bones);
 	ClassDB::bind_method(D_METHOD("get_all_constraint_data"), &SpineSkin::get_constraint);
+	ClassDB::bind_method(D_METHOD("setup_spine_skin", "name"), &SpineSkin::setup_spine_skin);
 }
 
 SpineSkin::SpineSkin():skin(NULL) {}
@@ -132,4 +133,8 @@ Array SpineSkin::get_constraint(){
 		}
 	}
 	return gd_cs;
+}
+
+void SpineSkin::setup_spine_skin(const String &name){
+	skin = new spine::Skin(S_T(name));
 }

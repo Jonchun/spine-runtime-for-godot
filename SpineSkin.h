@@ -53,6 +53,8 @@ public:
 	Array get_bones();
 
 	Array get_constraint();
+
+	void setup_spine_skin(const String &name);
 };
 
 #endif //GODOT_SPINESKIN_H
